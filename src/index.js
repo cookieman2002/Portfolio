@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import IntroPage from './pages/IntroPage';
+import NotFound from './pages/NotFound';
 import SearchPage from './pages/SearchPage';
 import Layout from './templates/Layout';
 
@@ -15,6 +16,10 @@ const routes = createBrowserRouter([
       {
       index: true,
       element: <IntroPage/>
+      },
+      {
+      path: "*",
+      element: <NotFound/>
       },
       {
         path: "/søg",
