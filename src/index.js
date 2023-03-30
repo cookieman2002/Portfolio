@@ -1,11 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import './App.css';
+import IntroPage from './pages/IntroPage';
+import SearchPage from './pages/SearchPage';
+import Layout from './templates/Layout';
+
+
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+      index: true,
+      element: <IntroPage/>
+      },
+      {
+        path: "/søg",
+        element: <SearchPage/>
+      }
+    ]
+  }
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={routes} />
   </React.StrictMode>
 );
 
