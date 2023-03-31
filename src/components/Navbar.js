@@ -35,7 +35,11 @@ const [themes, setThemes] = useState(false);
         </ul>
         </div>
         {settings && <div className="absolute z-10 h-full w-screen right-0 bg-black/50" >
-            <motion.div className="absolute z-20 h-full  w-[300px] right-0 bg-red-500">
+            <motion.div
+            initial={{ marginright: -1000, translateX: 500  }}
+            animate={{ marginright: 0, translateX: 0 }}
+            transition={{ stiffness: 300, ease: "easeInOut" }}
+            className="absolute z-20 h-full  w-[300px] right-0 bg-red-500 overflow-hidden">
                 <button className="z-50 absolute right-2 text-black font-bold text-xl" onClick={() => setSettings(!settings)}>X</button>
                 <ul className="flex flex-col items-center justify-between mt-10">
                 <li className="border-b w-full flex justify-center">
