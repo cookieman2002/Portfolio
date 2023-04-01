@@ -1,7 +1,7 @@
 import NavigatorLink from "./NavigatorLink";
 import { Settings2 } from "lucide-react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Navbar = () => {
 const [settings, setSettings] = useState(false);
@@ -13,7 +13,7 @@ const [themes, setThemes] = useState(false);
 
 
     return ( <nav className="flex justify-between bg-blue-600">
-        <h1>Magnus Larsen</h1>
+        <NavigatorLink LinkName="Magnus Larsen" link="/"/>
         <div className="flex gap-3">
 
         <ul className="flex">
@@ -35,9 +35,12 @@ const [themes, setThemes] = useState(false);
         </ul>
         </div>
         {settings && <div className="absolute z-10 h-full w-screen right-0 bg-black/50" >
+            <div className="absolute z-10 h-full w-screen right-0 bg-black/50" onClick={() => setSettings(!setSettings)}/>
             <motion.div
-            initial={{ marginright: -1000, translateX: 500  }}
+            key={!settings}
+            initial={{ marginright: settings ? -1000 : 0, translateX: settings ? 500 : 0  }}
             animate={{ marginright: 0, translateX: 0 }}
+            exit={{marginRight: -1000, translateX: 500}}
             transition={{ stiffness: 300, ease: "easeInOut" }}
             className="absolute z-20 h-full  w-[300px] right-0 bg-red-500 overflow-hidden">
                 <button className="z-50 absolute right-2 text-black font-bold text-xl" onClick={() => setSettings(!settings)}>X</button>
@@ -57,6 +60,7 @@ const [themes, setThemes] = useState(false);
                 </ul>
                 
             </motion.div>
+            
         </div> }
     </nav> );
 }
