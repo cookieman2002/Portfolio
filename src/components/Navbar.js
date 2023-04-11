@@ -7,6 +7,7 @@ import { ColorToggleContext } from "../context/ColorContext";
 const Navbar = () => {
 const [settings, setSettings] = useState(false);
 const [themes, setThemes] = useState(false);
+const [menu, setmenu] = useState(false);
     function handleSettings(){
     setSettings(true)
     }
@@ -18,13 +19,18 @@ const {isColor, setIsColor} = useContext(ColorToggleContext)
         <NavigatorLink LinkName="Magnus Larsen" style="w-7" link="/"/>
         <div className="flex gap-3">
 
-        <ul className="flex items-center">
+        <ul className="flex items-center gap-2">
             <li>
-    <NavigatorLink LinkName="something" link="/søg"/>
+    <NavigatorLink LinkName="Søg" link="/søg"/>
             </li>
-            <li>
-
-            </li>
+            <button onMouseEnter={() => setmenu(true)} onMouseLeave={() => setmenu(false)}>
+            emner
+            {menu && <ul className="absolute flex right-6 flex-col items-center  bg-violet-900">
+                <NavigatorLink LinkName="Grafik" link="/grafik" />
+                <NavigatorLink LinkName="Webudvikler" link="/webudvikler" />
+                <NavigatorLink/>
+            </ul> }
+            </button>
             <li>
 
             </li>

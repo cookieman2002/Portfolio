@@ -6,8 +6,8 @@ import { useEffect } from "react";
 
 const Layout = () => {
     const [isColor, setIsColor] = useState({
-        darkBlue: false,
-        lightBlue: true,
+        darkBlue: true,
+        lightBlue: false,
         darkRed: false,
         lightRed: false
     });

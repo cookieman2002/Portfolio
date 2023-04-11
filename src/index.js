@@ -6,6 +6,8 @@ import IntroPage from './pages/IntroPage';
 import NotFound from './pages/NotFound';
 import SearchPage from './pages/SearchPage';
 import Layout from './templates/Layout';
+import WebUdviklerPage from './pages/WebudviklerPage';
+import GrafikPage from './pages/GrafikPage';
 
 
 const routes = createBrowserRouter([
@@ -14,16 +16,24 @@ const routes = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-      index: true,
-      element: <IntroPage/>
+        index: true,
+        element: <IntroPage />
       },
       {
-      path: "*",
-      element: <NotFound/>
+        path: "*",
+        element: <NotFound />
+      },
+      {
+        path: "/webudvikler",
+        element: <WebUdviklerPage/>
+      },
+      {
+        path: "/grafik",
+        element: <GrafikPage/>
       },
       {
         path: "/søg",
-        element: <SearchPage/>
+        element: <SearchPage />
       }
     ]
   }
