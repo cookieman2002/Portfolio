@@ -20,17 +20,17 @@ const {isColor, setIsColor} = useContext(ColorToggleContext)
         <div className="flex gap-3">
 
         <ul className="flex items-center gap-2">
-            <li>
-    <NavigatorLink LinkName="Søg" link="/søg"/>
-            </li>
             <button onMouseEnter={() => setmenu(true)} onMouseLeave={() => setmenu(false)}>
-            emner
-            {menu && <ul className="absolute flex right-6 flex-col items-center  bg-violet-900">
+            Erfaringer
+            {menu && <ul className="absolute flex  flex-col items-center rounded-lg  bg-violet-900">
                 <NavigatorLink LinkName="Grafik" link="/grafik" />
                 <NavigatorLink LinkName="Webudvikler" link="/webudvikler" />
                 <NavigatorLink/>
             </ul> }
             </button>
+            <li>
+    <NavigatorLink LinkName="Søg" link="/søg"/>
+            </li>
             <li>
 
             </li>
