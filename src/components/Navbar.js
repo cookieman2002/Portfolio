@@ -25,7 +25,7 @@ const {isColor, setIsColor} = useContext(ColorToggleContext)
             {menu && <ul className="absolute flex  flex-col items-center rounded-lg  bg-violet-900">
                 <NavigatorLink LinkName="Grafik" link="/grafik" />
                 <NavigatorLink LinkName="Webudvikler" link="/webudvikler" />
-                <NavigatorLink/>
+                <NavigatorLink LinkName="Salgsassistent" link="/salgsassistent" />
             </ul> }
             </button>
             <li>
