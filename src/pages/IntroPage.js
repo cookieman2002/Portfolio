@@ -76,7 +76,7 @@ const {isColor} = useContext(ColorToggleContext)
         
 
 <div>
-    <a href={Cv} download={Cv} target="_blank">
+    <a href={Cv} download={Cv} >
         <button  className="mt-72 ml-80 bg-white text-lg text-black p-6 pl-10 pr-10 rounded-full download_Button">{isLang.english ? "Download my CV" : isLang.danish && "Hent mit CV"}</button>
     </a>
 </div>

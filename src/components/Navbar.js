@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (<nav className={`flex justify-between text-xl ${isColor.darkRed || isColor.lightRed ? "bg-red-500" : isColor.darkBlue || isColor.lightBlue ? "bg-blue-500" : ""}`}>
 
-        <NavigatorLink LinkName="Magnus Larsen" style="w-7" link="/" />
+        <NavigatorLink LinkName="Magnus Larsen" style={"w-7"} link="/" />
         <div className="flex gap-3">
 
             <ul className="flex items-center gap-2">
@@ -27,8 +27,8 @@ const Navbar = () => {
                     {isLang.english ? "Experience" : isLang.danish && "Erfaringer"}
                     {menu && <ul className="absolute flex  flex-col items-center rounded-lg  bg-violet-900">
                         <NavigatorLink style={"hover:text-blue-500"} LinkName={isLang.english ? "Graphics designer" : isLang.danish && "Grafisk designer"} link="/grafik" />
-                        <NavigatorLink style={"hover:text-red-500"} LinkName={isLang.english ? "Web-developer" : isLang.danish && "Webudvikler"} link="/webudvikler" />
-                        <NavigatorLink style={"hover:text-yellow-200"} LinkName={isLang.danish ? "Salgsassistent" : isLang.english && "Sales assistant"} link="/salgsassistent" />
+                        <NavigatorLink style="hover:text-red-500" LinkName={isLang.english ? "Web-developer" : isLang.danish && "Webudvikler"} link="/webudvikler" />
+                        <NavigatorLink style="hover:text-yellow-200" LinkName={isLang.danish ? "Salgsassistent" : isLang.english && "Sales assistant"} link="/salgsassistent" />
                     </ul>}
                 </button>
                 <li>
