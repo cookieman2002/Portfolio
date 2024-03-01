@@ -3,8 +3,13 @@ import Navbar from "../components/Navbar";
 import { ColorToggleContext } from "../context/ColorContext";
 import { useState } from "react";
 import { useEffect } from "react";
+import { LangToggleContext } from "../context/LangContext";
 
 const Layout = () => {
+    const [isLang, setIsLang] = useState({
+    english: true,
+    danish: false
+    })
     const [isColor, setIsColor] = useState({
         darkBlue: true,
         lightBlue: false,
@@ -24,11 +29,14 @@ const Layout = () => {
     return ( 
         <div >
         <ColorToggleContext.Provider value={{isColor, setIsColor}}>
+            <LangToggleContext.Provider value={{isLang, setIsLang}}>
+
            <Navbar/>
             <main className={isColor.darkBlue || isColor.darkRed ? "dark-mode" : isColor.lightBlue || isColor.lightRed ? "light-mode": "dark-mode"} >
                 <Outlet/>
             </main>
 
+            </LangToggleContext.Provider>
         </ColorToggleContext.Provider>
         </div>
         );
